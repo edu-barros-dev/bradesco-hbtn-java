@@ -50,6 +50,7 @@ public class Pedido {
         System.out.println("TOTAL PRODUTOS: %.2f".formatted(calcularTotal() / (1 - percentualDesconto / 100)));
         System.out.println("----------------------------");
         System.out.println("TOTAL PEDIDO: %.2f".formatted(calcularTotal()));
+        System.out.println("----------------------------");
     }
 
 }
