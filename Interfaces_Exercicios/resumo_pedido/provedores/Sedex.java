@@ -16,6 +16,7 @@ public class Sedex implements ProvedorFrete {
 
     }
 
+    @Override
     public TipoProvedorFrete obterTipoProvedorFrete() {
         return TipoProvedorFrete.SEDEX;
     }

@@ -16,6 +16,7 @@ public class Loggi implements ProvedorFrete {
 
     }
 
+    @Override
     public TipoProvedorFrete obterTipoProvedorFrete() {
         return TipoProvedorFrete.LOGGI;
     }
