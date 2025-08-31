@@ -62,7 +62,7 @@ public class GerenciamentoDeContatos {
             contatos.remove(nome);
             System.out.printf("Contato %s removido com sucesso!\n", nome);
         } else {
-            System.out.printf("Contato %s não encontrado!\n", nome);
+            System.out.printf("Contato %s não encontrado.\n", nome);
         }
         System.out.println();
     }
