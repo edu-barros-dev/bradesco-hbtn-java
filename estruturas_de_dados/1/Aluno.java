@@ -24,8 +24,8 @@ public class Aluno {
         this.idade = idade;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Aluno{" +
                 "nome='" + nome + '\'' +
                 ", idade=" + idade +
