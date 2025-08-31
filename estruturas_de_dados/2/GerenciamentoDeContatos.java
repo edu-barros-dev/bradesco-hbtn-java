@@ -16,7 +16,7 @@ public class GerenciamentoDeContatos {
     public void adicionarContato(String nome, String telefone, String email) {
         // IMPLEMENTE ESTE METODO
         if (contatos.containsKey(nome)) {
-            System.out.printf("Erro: Contato com nome %s já existe!\n\n", nome);
+            System.out.printf("Erro: Contato com nome %s já existe!\n", nome);
         } else {
             Contato novoContato = new Contato();
             novoContato.adicionarTelefone(telefone);
@@ -37,7 +37,6 @@ public class GerenciamentoDeContatos {
             contato.exibirContato();
             System.out.println("-------------------------------");
         }
-        System.out.println();
     }
 
 
@@ -51,7 +50,6 @@ public class GerenciamentoDeContatos {
         } else {
             System.out.printf("Contato com nome %s não encontrado!\n", nome);
         }
-        System.out.println();
     }
 
 
@@ -64,7 +62,6 @@ public class GerenciamentoDeContatos {
         } else {
             System.out.printf("Contato %s não encontrado.\n", nome);
         }
-        System.out.println();
     }
 
 
