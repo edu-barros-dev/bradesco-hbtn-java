@@ -23,12 +23,7 @@ public class PessoasArray {
             throw new IllegalArgumentException("O array de nomes possui :" + nomes.length + " nomes.");
         }
 
-        for (int i = 0; i < nomes.length; i++) {
-            if (i == id) {
-                System.out.printf("Nome pesquisado é %s que está na posição %d\n", nomes[i], i);
-                return;
-            }
-        }
+        System.out.printf("Nome pesquisado é %s que está na posição %d\n", nomes[id], id);
 
     }
 }
