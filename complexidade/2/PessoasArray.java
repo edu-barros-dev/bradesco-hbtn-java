@@ -26,7 +26,7 @@ public class PessoasArray {
 
         while (inicio <= fim) {
             int meio = (inicio + fim) / 2;
-            System.out.printf("Passando pelo indice: \"%d\"\n", meio);
+            System.out.printf("Passando pelo indice: %d\n", meio);
             if (nomes[meio].equals(nome)) {
                 encontrado = true;
                 System.out.printf("Nome %s encontrado na posição %d\n", nome, meio);
