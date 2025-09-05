@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Blog {
 
@@ -22,7 +23,10 @@ public class Blog {
         for (Post postagem : postagens) {
             autores.add(postagem.getAutor());
         }
-        return autores;
+        List<Autor> autoresOrdenados = new ArrayList<>(autores);
+        autoresOrdenados.sort(Comparator.comparing(Autor::getNome));
+
+        return new LinkedHashSet<>(autoresOrdenados);
     }
 
     public Map<Categorias, Integer> obterContagemPorCategoria () {
@@ -36,7 +40,15 @@ public class Blog {
                 contagem.put(categoria, 1);
             }
         }
-        return contagem;
+        return contagem.entrySet()
+                .stream()
+                .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new
+                ));
     }
 
     public Set<Post> obterPostsPorAutor(Autor autor) {
@@ -60,7 +72,7 @@ public class Blog {
     }
 
     public Map<Categorias, Set<Post>> obterTodosPostsPorCategorias() {
-        Map<Categorias, Set<Post>> postsPorCategoria = new HashMap<>();
+        Map<Categorias, Set<Post>> postsPorCategoria = new TreeMap<>();
         for (Post postagem : postagens) {
             Categorias categoria = postagem.getCategoria();
             if (!postsPorCategoria.containsKey(categoria)) {
@@ -72,7 +84,7 @@ public class Blog {
     }
 
     public Map<Autor, Set<Post>> obterTodosPostsPorAutor() {
-        Map<Autor, Set<Post>> postsPorAutor = new HashMap<>();
+        Map<Autor, Set<Post>> postsPorAutor = new TreeMap<>();
         for (Post postagem : postagens) {
             Autor autor = postagem.getAutor();
             if (!postsPorAutor.containsKey(autor)) {
