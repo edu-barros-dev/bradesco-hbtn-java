@@ -54,7 +54,7 @@ public class Pessoa {
         this.idade = idade;
     }
 
-    @java.lang.Override
+    @Override
     public java.lang.String toString() {
         return String.format("[%d] %s %s %d R$ %.6f", codigo, nome, cargo, idade, salario);
     }
